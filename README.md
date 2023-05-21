@@ -1,5 +1,5 @@
 # streamcheck
-check upcoming streams with the YouTube API written in Go.
+Check upcoming streams with the YouTube API written in Go.
 
 # File format
 put all of your streamer's channel ID(s) in a file with this format called `id.txt`.
