@@ -2,6 +2,7 @@
 check upcoming streams with the YouTube API written in Go.
 
 # File format
+put your streamer's channel ID in a file with this format called `id.txt`.
 ```
 UCoSrY_IQQVpmIRZ9Xf-y93g #Streamer_Name
 UCO_aKKYxn4tvrqPjcTzZ6EQ #Streamer2
