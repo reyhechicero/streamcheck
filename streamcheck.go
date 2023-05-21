@@ -65,7 +65,7 @@ func main() {
 		return
 	}
 
-	channels, err := os.Open("commented-id.txt")
+	channels, err := os.Open("id.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
