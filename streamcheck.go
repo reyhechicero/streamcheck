@@ -31,6 +31,9 @@ func LookForPremiere(service *youtube.Service, channelId string) ([]*youtube.Sea
     return response.Items, nil
 }
 
+/* uncomment this if you want to see current livestreams.
+ * If the streamer did not set up a premiere it will not notify you. 
+ * This costs more quota points if you do and there is probably a better way.
 /*
 func LookForLive(service *youtube.Service, channelId string) ([]*youtube.SearchResult, error) {
 	call := service.Search.List([]string{"id,snippet"}).
@@ -45,24 +48,6 @@ func LookForLive(service *youtube.Service, channelId string) ([]*youtube.SearchR
     }
 
     return response.Items, nil
-}
-*/
-/*
-func GetChannelID(service *youtube.Service, username string) (string, error) {
-    call := service.Channels.List([]string{"id"}).
-        ForUsername(username).
-        MaxResults(1)
-
-    response, err := call.Do()
-    if err != nil {
-        return "", err
-    }
-
-    if len(response.Items) == 0 {
-        return "", fmt.Errorf("no channel found for username %s", username)
-    }
-
-    return response.Items[0].Id, nil
 }
 */
 
@@ -164,6 +149,8 @@ func main() {
 			livecheck := item.Snippet.LiveBroadcastContent
 			fmt.Printf("%v - Starts on: %v - %s\n", html.UnescapeString(item.Snippet.Title), formattedTime, livecheck)
 		}
+		/* uncomment this and the function above to
+		 * look for currently live streams that were not premiered.
 		/*
 		live_results, err := LookForLive(youtubeService, channelid)
 		if err != nil {
